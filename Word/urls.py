@@ -2,5 +2,7 @@ from django.urls import path
 from .views import WordAPIView
 urlpatterns = [
     path('', WordAPIView.as_view()), #post word
-    path('<int:id>/', WordAPIView.as_view()), #get word by day
+
+    #get word by day. Used by CreateWord.js
+    path('<int:id>/', WordAPIView.as_view()), 
 ]

@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class Word(models.Model):
     eng = models.TextField()
     kor = models.TextField()
