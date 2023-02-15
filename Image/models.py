@@ -1,9 +1,10 @@
 from django.db import models
 
-
-class Image(models.Model):
+# Create your models here.
+class Image(models.Model) :
     name = models.TextField(default="default")
-    day = models.IntegerField(default=1)
-    uuid = models.TextField(unique=True, default="")
+    day = models.IntegerField()
+    uuid_name = models.TextField(default="")
+
     class Meta:
-        db_table = "Image"
+        db_table = 'Image'
