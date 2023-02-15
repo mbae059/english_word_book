@@ -28,7 +28,6 @@ class ImageAPIView(APIView):
         # 일단 파일 불러와
         image = request.FILES.get('image')
         name = image.name
-        print(1)
 
         uuid_name = uuid4().hex
         save_path = os.path.join(MEDIA_ROOT, uuid_name)
@@ -38,12 +37,10 @@ class ImageAPIView(APIView):
             for chunk in image.chunks():
                 destination.write(chunk)
 
-        print(1)
 
         serializer = ImageSerializer(data={'name':name, 'day':1, 'uuid_name':uuid_name}) #use dict for creating
 
         if serializer.is_valid() :
-            print(1)
             serializer.save()
         
         return Response(status=200)
